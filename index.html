@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zee Football Academy</title>
+    <meta name="description" content="Zee Football Academy - Train, Compete, Dominate. Where legends are forged.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p class="loader-label">Kick Off Starts <span id="load-progress">0%</span></p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">ZEE ACADEMY</span>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#history">Legacy</a></li>
+                <li><a href="#rules">Rules</a></li>
+                <li><a href="#stats">Stats</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- =====================
+         HERO (Scroll Scrub)
+         The hero sits in a tall scroll-track wrapper.
+         The canvas is pinned via JS while the wrapper scrolls.
+    ===================== -->
+    <div id="hero-track">
+        <!-- The sticky hero panel -->
+        <div id="hero" class="panel panel-hero">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-vignette"></div>
+            <div class="hero-text-container">
+                <h1 id="hero-heading" class="hero-heading text-reveal">Legends Are Forged<br>In Every Strike.</h1>
+                <p id="hero-subheading" class="hero-subheading text-reveal">Train. Compete. Dominate.</p>
+                <button id="hero-cta" class="cta-btn text-reveal">
+                    <span>Join The Academy</span>
+                    <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+            <div id="flash-overlay"></div>
+        </div>
+    </div>
+
+    <!-- =====================
+         STACKING CONTENT PANELS
+         Each panel uses position:sticky + 100vh.
+         They naturally slide and overlap each other as the user scrolls.
+    ===================== -->
+    <div id="stack-container">
+
+        <!-- Panel 2: About -->
+        <div id="about" class="panel panel-about stack-panel" data-panel="about">
+            <div class="panel-shadow-edge"></div>
+            <div class="panel-dim-overlay"></div>
+            <div class="panel-content two-column">
+                <div class="col-text">
+                    <p class="section-eyebrow">About The Academy</p>
+                    <h2 class="section-title">The Beautiful<br>Game.</h2>
+                    <p class="section-desc">More than a sport — it is a global language. It represents passion, unity,
+                        skill, and unyielding competition. Here, we transform raw talent into absolute mastery, forging
+                        the next generation of football icons.</p>
+                </div>
+                <div class="col-image" id="about-parallax">
+                    <div class="col-image-inner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel 3: History -->
+        <div id="history" class="panel panel-history stack-panel" data-panel="history">
+            <div class="panel-shadow-edge"></div>
+            <div class="panel-dim-overlay"></div>
+            <div class="panel-content">
+                <p class="section-eyebrow center">Our Legacy</p>
+                <h2 class="section-title center">A Legacy That<br>Spans Centuries.</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1863</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <h3>Origins in England</h3>
+                            <p>The Football Association is founded, writing the first standardised set of rules and
+                                ending chaos.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1904</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <h3>FIFA Is Born</h3>
+                            <p>The Fédération Internationale de Football Association unites the world under a single
+                                governing body.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1930</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-body">
+                            <h3>First World Cup</h3>
+                            <p>Uruguay hosts and wins the inaugural FIFA World Cup, planting a seed of global obsession.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">Today</div>
+                        <div class="timeline-dot active"></div>
+                        <div class="timeline-body">
+                            <h3>The World Stage</h3>
+                            <p>Five billion eyes watch the beautiful game. The pinnacle of athletic achievement,
+                                culture, and unity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel 4: Rules -->
+        <div id="rules" class="panel panel-rules stack-panel" data-panel="rules">
+            <div class="panel-shadow-edge"></div>
+            <div class="panel-dim-overlay"></div>
+            <div class="panel-content">
+                <p class="section-eyebrow center">Fundamentals</p>
+                <h2 class="section-title center">The Rules of<br>The Game.</h2>
+                <div class="cards-grid">
+                    <div class="rule-card tilt-card">
+                        <div class="card-inner">
+                            <span class="card-number">01</span>
+                            <h3>11 Players</h3>
+                            <p>Each team fields eleven players, working in precision across the pitch in a structured
+                                formation.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card tilt-card">
+                        <div class="card-inner">
+                            <span class="card-number">02</span>
+                            <h3>90 Minutes</h3>
+                            <p>Two intense 45-minute halves. A battle of endurance, concentration, and controlled
+                                aggression.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card tilt-card">
+                        <div class="card-inner">
+                            <span class="card-number">03</span>
+                            <h3>No Hands</h3>
+                            <p>Outfield players rely solely on feet, chest and head. Hands are the keeper's exclusive
+                                domain.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card tilt-card">
+                        <div class="card-inner">
+                            <span class="card-number">04</span>
+                            <h3>Offside Law</h3>
+                            <p>A tactical rule preventing attackers from lurking behind the final defensive line for
+                                easy goals.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card tilt-card">
+                        <div class="card-inner">
+                            <span class="card-number">05</span>
+                            <h3>Fouls & Free Kicks</h3>
+                            <p>Dangerous or illegal play is punished, granting dead-ball opportunities to the aggrieved
+                                team.</p>
+                        </div>
+                    </div>
+                    <div class="rule-card tilt-card">
+                        <div class="card-inner">
+                            <span class="card-number">06</span>
+                            <h3>Goal Scoring</h3>
+                            <p>The entire ball must cross the goal line. That fleeting moment is worth everything.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel 5: Stats -->
+        <div id="stats" class="panel panel-stats stack-panel" data-panel="stats">
+            <div class="panel-shadow-edge"></div>
+            <div class="panel-dim-overlay"></div>
+            <div class="panel-content center-content">
+                <p class="section-eyebrow center">By The Numbers</p>
+                <h2 class="section-title center">The Academy<br>In Figures.</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3 class="stat-number"><span class="counter" data-target="250" data-suffix="+">0</span></h3>
+                        <p class="stat-label">Players Trained</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number"><span class="counter" data-target="32">0</span></h3>
+                        <p class="stat-label">Championships</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number"><span class="counter" data-target="15">0</span></h3>
+                        <p class="stat-label">National Selections</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number"><span class="counter" data-target="98" data-suffix="%">0</span></h3>
+                        <p class="stat-label">Success Rate</p>
+                    </div>
+                </div>
+                <footer class="footer">
+                    <p class="footer-logo">ZEE ACADEMY</p>
+                    <p>&copy; 2026 ZEE Football Academy. All Rights Reserved.</p>
+                </footer>
+            </div>
+        </div>
+
+    </div><!-- /#stack-container -->
+
+    <script src="main.js"></script>
+</body>
+
+</html>
