@@ -208,14 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // ── 5f. Stats counters – fire once when panel is active ──
-        // IntersectionObserver is unreliable with sticky panels (they are
-        // always technically "in" the viewport). Use rect position instead.
         if (!countersAnimated) {
             const statsPanel = document.getElementById('stats');
             if (statsPanel) {
                 const sr = statsPanel.getBoundingClientRect();
-                // Panel is the active one when its top is near the viewport top
-                if (sr.top <= vh * 0.25 && sr.top > -vh * 0.5) {
+                // Trigger as soon as the numbers become visible (panel top is in the upper 75% of viewport)
+                if (sr.top <= vh * 0.75 && sr.top > -vh) {
                     countersAnimated = true;
                     document.querySelectorAll('.counter').forEach(el => animateCounter(el));
                 }
